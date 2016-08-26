@@ -1,0 +1,34 @@
+body{
+  background-image: url(../img/homepage.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+nav{}
+
+ul{
+  text-decoration: none;
+}
+
+li{
+  display: inline;
+  margin: 20px;
+  font-size: 30px;
+}
+
+#push-left{
+border: 2px solid re;
+width: 25%;
+float: left;
+position: absolute;
+left: 100px;
+}
+
+#push-right{
+  border: 2px solid re;
+  width: 40%;
+  float: right;
+  position: absolute;
+  left: 1000px;
+  
+}

@@ -33,23 +33,22 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     hooks: {
       beforeCreate: function(createdUser, options, cb) {
-        var hash = bcrypt.hashSync(createdUser.password, 10);
-        createdUser.password = hash;
+        if(createdUser.password){
+          var hash = bcrypt.hashSync(createdUser.password, 10);
+          createdUser.password = hash;
+        }
         cb(null, createdUser);
       }
     },
-
     classMethods: {
       associate: function(models) {
         // associations can be defined here
       }
     },
-
     instanceMethods: {
       validPassword: function(password) {
         return bcrypt.compareSync(password, this.password);
       },
-
       toJSON: function() {
         var jsonUser = this.get();
         delete jsonUser.password;

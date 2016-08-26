@@ -1,1 +1,17 @@
 organizations
+
+<!-- ejs list view using bootstrap -->
+<ul class="list-group">
+  <%  activities.forEach(function(item) { %>
+      <li class="list-group-item"><a href="/organizations/<%= item.org %>"><%= item.org %></a>
+      <form action="">
+        <button id='edit-org' type="button" class="btn btn-primary">Edit</button>
+        <button id='delete_org' type="button" class="btn btn-danger">Delete</button>
+      </form>
+
+
+      </li>
+  <% });%>
+</ul>
+
+
